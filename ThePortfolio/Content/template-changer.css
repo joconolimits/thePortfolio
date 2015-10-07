@@ -1,0 +1,149 @@
+﻿	/* theme changer */
+.theme-changer-wrap {
+	position:fixed;
+	z-index:5000;
+	top:150px;
+	left:-154px;
+}
+
+.theme-changer {
+	float: left;
+	background:#f6f6f6;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:12px;
+	font-family:Helvetica, Arial;
+	padding:15px 20px;
+	border-bottom-right-radius: 3px;	
+	-moz-border-bottom-right-radius: 3px;	
+	-webkit-border-bottom-right-radius: 3px;	
+		
+}
+
+.theme-changer select {
+	background: #fff;
+	border: 1px solid #686868;
+	color: #323232;	
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 5%;
+}
+
+.changer-inner {
+	overflow:hidden;
+	width:114px;
+	
+}
+
+.theme-changer-wrap a {
+	float:left;
+	display:block;
+	box-shadow: #b2b2b2 1px 1px 1px;		
+	margin-right:3px;
+	margin-left:3px;
+	margin-bottom:5px;
+	width:32px;
+	height:32px
+}
+a.light-skin {
+	height:32px;
+	width:51px;
+	margin-bottom:5px;
+	float:left;
+	display:block;
+	box-shadow: #b2b2b2 1px 1px 1px;		
+	margin-right:3px;
+	margin-left:3px;	
+	background:#fff;
+}
+a.dark-skin {
+	height:32px;
+	width:51px;
+	margin-bottom:5px;
+	float:left;
+	display:block;
+	box-shadow: #b2b2b2 1px 1px 1px;		
+	margin-right:3px;
+	margin-left:3px;	
+	background:#3f3f3f;
+	opacity:1;
+	z-index:1000;
+}
+
+a.color-themes {
+	cursor:pointer;
+}
+
+a.col2 {
+	background:#e1472f
+}
+
+a.col1 {
+	background:#FE7E17
+}
+
+a.col3 {
+	background:#21748C
+}
+
+a.col4 {
+	background:#337d49
+}
+a.col5 {
+	background:#a34670
+}
+a.col6 {
+	background:#f9a936
+}
+
+.changer-inner span {
+	display: block;
+	margin-bottom:15px
+}
+
+.theme-changer-wrap a.pat {
+	float:left;
+}
+
+.theme-changer-wrap a.pat#pat1 {
+	background:url(images/test/pattern1.jpg);
+}
+
+.theme-changer-wrap a.pat#pat2 {
+	background:url(images/test/pattern2.jpg);
+}
+
+.theme-changer-wrap a.pat#pat3 {
+	background:url(images/test/pattern3.jpg);
+}
+
+.theme-changer-wrap a.pat#pat4 {
+	background:url(images/test/pattern4.jpg);
+}
+
+.theme-changer-wrap a.pat#pat5 {
+	background:url(images/test/pattern5.jpg);
+}
+
+.theme-changer-wrap a.pat#pat6 {
+	background:url(images/test/pattern6.jpg);
+}
+
+
+div.open-close {
+	position: relative;
+	border-top-right-radius: 3px;	
+	border-bottom-right-radius: 3px;	
+	-moz-border-top-right-radius: 3px;	
+	-moz-border-bottom-right-radius: 3px;	
+	-webkit-border-top-right-radius: 3px;	
+	-webkit-border-bottom-right-radius: 3px;	
+
+	left:0;
+	display: block;
+	width:38px;
+	height: 36px;
+	float: left;
+	cursor:pointer;
+	background:url(images/sett.png) #f6f6f6 no-repeat 50% 50%;
+}

@@ -1,0 +1,446 @@
+﻿@model ThePortfolio.ViewModels.FrontEnd
+@{
+    Layout = "~/Views/Shared/_FrontEndLayout.cshtml";
+    ViewBag.Title = "Index";
+}
+    <!-- preloader-->
+    <div class="whitebg">
+        <div id="spinner"></div>
+    </div>
+
+    <div class="theme-changer-wrap">
+    </div>
+
+    <header id="header" class="solid-header">
+        <div class="centered-wrapper">
+
+            <div class="percent-one-fourth">
+                <div class="logo"></div>
+            </div><!--end one-fourth-->
+
+            <a class="nav-btn"><i class="fa fa-bars"></i></a>
+
+            <div class="percent-three-fourth column-last">
+                <nav id="navigation">
+                    <ul id="mainnav" class="sf-menu">
+                        <li class="current"><a href="index.html/#hello"><span>HELLO</span></a></li>
+                        <li><a href="index.html#about"><span>ABOUT</span></a></li>
+                        <li><a href="index.html#work"><span>WORK</span></a></li>
+                        <li><a href="index.html#services"><span>Skills</span></a></li>
+                        <li><a href="index.html#blog"><span>JOURNAL</span></a></li>
+                        <li><a class="external" href="http://1drv.ms/1EW1wFN" target="_blank"><span>Download CV</span></a></li>
+                        <li><a href="index.html#contact"><span>CONTACT</span></a></li>
+                    </ul>
+                </nav><!--end navigation-->
+            </div><!--end three-fourth-->
+            <div class="clear"></div>
+        </div><!--end centered-wrapper-->
+    </header>
+
+    <div id="wrapper">
+
+        <!-- HELLO SECTION -->
+
+        <section id="hello">
+
+            <div class="menu-fixer"></div>
+
+            <div class="fullscreenbanner-container">
+                <div class="fullscreenbanner">
+                    <ul>
+
+                        <!-- THE FIRST SLIDE -->
+                        <li data-transition="fade" data-slotamount="15" data-masterspeed="0">
+                            <img src="~/Images/slides/slide33.jpg" alt="" />
+
+                            <!-- THE CAPTIONS IN THIS SLIDE -->
+                            <div class="caption tp-resizeme big-text lft ltt"
+                                 data-x="center"
+                                 data-y="center"
+                                 data-speed="300"
+                                 data-start="500"
+                                 data-easing="easeOutExpo">
+                                <h1>I am @Model.User.Name @Model.User.LastName</h1>
+                                <div class="fancy-caption" style="width: 365px">
+                                    <div class="fancy-slider-info">Web Developer</div>
+                                    <div class="fancy-slider-caption"></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- THE SECOND SLIDE -->
+                        <li data-transition="slidedown" data-slotamount="15" data-masterspeed="300">
+                            <img src="~/Images/slides/slide11.jpg" alt="" />
+
+                            <div class="caption tp-resizeme big-text lft ltt"
+                                 data-x="center"
+                                 data-y="center"
+                                 data-speed="300"
+                                 data-start="500"
+                                 data-easing="easeOutExpo"><h1>It All Starts with a Vision</h1></div>
+
+                        </li>
+
+                        <!-- THE THIRD SLIDE -->
+                        <li data-transition="fade" data-slotamount="15" data-masterspeed="300">
+                            <img src="~/Images/slides/slide44.jpg" alt="" />
+
+                            <!-- THE CAPTIONS IN THIS SLDIE -->
+                            <div class="caption tp-resizeme big-text lft ltt"
+                                 data-x="center"
+                                 data-y="center"
+                                 data-speed="300"
+                                 data-start="500"
+                                 data-easing="easeOutExpo"><h1>I Just Love What I Do</h1></div>
+
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- ABOUT SECTION -->
+
+        <section id="about">
+
+            <div class="double-space"></div>
+
+            <div class="centered-wrapper">
+
+                <h1 class="section-title">@Model.User.Name @Model.User.LastName</h1>
+
+                <div class="space"></div>
+
+                <div class="team">
+                    <div class="percent-one-third box fadeInDown">
+                        <div class="team-member">
+                            <a href="~/Images/Avatar/@Model.User.Avatar" rel="prettyPhoto" title="Jordan Krstevski">
+                                <span class="item-on-hover"><span class="hover-image"><i class="fa fa-search"></i></span></span>
+                                <img class="team-avatar" src="~/Images/Avatar/@Model.User.Avatar" alt=" " />
+                            </a>
+                            <div class="team-text">
+                                <h6>Web Developer</h6>
+
+                            </div>
+                            <div class="team-social">
+                                <a href="@Model.User.Facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="@Model.User.Twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="@Model.User.Linkedin"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div><!--end team-member-->
+                    </div><!--end one-third-->
+                </div>
+                <div class="percent-one-third box fadeInDown">
+                    <h2 class="bold-style">I CARE.</h2>
+                    <p>I always strive to keep my clients satisfied and Happy, by providing the best solutions for their needs. The customer happiness is one of the most important aspects of any project. </p>
+                </div>
+
+                <div class="percent-one-third  column-last box fadeInDown">
+                    <h2 class="bold-style">I'M CREATIVE.</h2>
+                    <p>What I always strive to achieve is best solutions by looking for some creative ways of solving the problem. Thinking out of the box is one of these things.</p>
+                </div>
+
+                <div class="percent-one-third box fadeInDown">
+                    <h2 class="bold-style">I DELIVER.</h2>
+                    <p>I prefer the way of: under promise, over deliver.</p>
+                </div>
+
+                <div class="separator"></div>
+
+                @{
+                    int i = 0;
+                    foreach (var item in Model.Skills)
+                    {
+                        string MyClass="";
+                        if (i == 2)
+                        { i = 0; MyClass = "column-last"; }
+                        else { i++; }
+                        <div class="percent-one-third @MyClass">
+                    
+                            <div class="skillbar clearfix" data-percent="@item.Percentage%">
+                                <div class="skillbar-title"><span>@item.Name</span></div>
+                                <div class="skillbar-bar"></div>
+                                <div class="skill-bar-percent">@item.Percentage%</div>
+                            </div>
+                        </div>
+                        }
+                    }
+        </section>
+
+        <section id="team">
+
+            <div class="double-space"></div>
+            <div class="centered-wrapper">
+
+                <div class="space"></div>
+            </div>
+        </section><!--end centered-wrapper-->
+        <!-- QUOTE SECTION -->
+        <section class="parallax-section" id="quote">
+            <div class="darker-overlay">
+                <section class="centered-wrapper">
+                    <div class="double-space"></div>
+
+                    <h2 class="parallax-quote">"TEAM WORK MAKES THE DREAM WORK"</h2>
+
+                    <div class="double-space"></div>
+                </section>
+            </div>
+        </section>
+
+
+        <!-- WORK SECTION -->
+        <section id="work">
+
+            <div class="double-space"></div>
+
+            <h1 class="section-title box fadeInDown">My Work</h1>
+
+            <div class="space"></div>
+
+            <section id="options">
+                <ul id="filters" class="option-set clearfix" data-option-key="filter">
+                    <li><a href="#filter" data-option-value="*" class="selected active">All</a></li>
+                    @*List All The Tags*@
+                   @foreach (var item in Model.Tags)
+                   {
+                    <li><a href="#filter" data-option-value=".@item.ID">@item.Name</a></li>
+                   }
+                   
+                </ul>
+            </section>
+
+            <div class="space"></div>
+
+            <ul class="portfolio grid box fadeInUp">
+                @*The section to display the Portfolio Items*@
+                @{
+                    string anchor = "";
+                    foreach (var item in Model.portfolioItems)
+                    {
+                        //if item has URl render the Url else Use preatyphoto
+                        if (item.ProjcetUrl == null)
+                        {
+                            anchor = "href= /Images/PortfolioItems/"+@item.Image + " rel=prettyPhoto[pp_gal]";
+
+                        }
+                        else
+                        {
+                            anchor = "href =" + @item.ProjcetUrl+ " target= _blank";
+                        }
+                        //List all the tags that an item has 
+                        string tags = "";
+                        foreach (var t in item.Tags)
+                        {
+                            tags += t.ID + " ";
+                        }
+                    <li class="grid-item @tags item-wide">
+                        <a @anchor >
+                            <div class="grid-item-on-hover">
+                                <div class="grid-text">
+                                    <h1>@item.Title</h1>
+                                </div>
+                                <span>
+                                    @item.Description
+                                </span>
+
+                            </div>
+                            <img src="~/Images/PortfolioItems/@item.Image" alt=" " />
+                        </a>
+                    </li>
+                    }
+                    }
+                    
+</ul>
+
+            <div class="double-space"></div>
+
+
+            <h1 class="section-title">Some Fun Facts</h1>
+
+            <div class="space"></div>
+
+            <div class="counter-wrapper centered-wrapper box fadeInUp">
+                <div class="counter-item">
+                    <span class="counter-number" data-from="1" data-to="1534" data-speed="2000">1534</span>
+                    <span class="counter-text">Cups of Coffee</span>
+                </div>
+
+                <div class="counter-item">
+                    <span class="counter-number" data-from="1" data-to="1125" data-speed="2000">1125</span>
+                    <span class="counter-text">Lines of code Typed</span>
+                </div>
+
+                <div class="counter-item">
+                    <span class="counter-number" data-from="1" data-to="28" data-speed="2000">48</span>
+                    <span class="counter-text">Satisfied Clients</span>
+                </div>
+
+                <div class="counter-item">
+                    <span class="counter-number" data-from="1" data-to="4" data-speed="2000">12</span>
+                    <span class="counter-text">Winning Awards</span>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+            <div class="double-space"></div>
+
+        </section>
+
+
+        <!-- SERVICES SECTION -->
+        <section class="parallax-section" id="services">
+            <div class="lighter-overlay">
+
+                <section class="centered-wrapper">
+
+                    <div class="double-space"></div>
+
+                    <h1 class="section-title">Services</h1>
+
+                    <div class="space"></div>
+
+                    <ul class="homepage-services box fadeInUp">
+                        @{
+                            string last = "";
+                            int flag = 0;
+                            foreach (var item in Model.Services)
+                            {
+                                flag++;
+                                if (flag == 4) { last = "column-last"; flag = 0; }
+                                else { last = ""; }
+                                <li class="dt-service-wrapper percent-one-fifth @last">
+                                    <div class="dt-service-item">
+                                        <i class="fa fa-@item.Icon"></i>
+                                        <h3 class="service-title">@item.Name</h3>
+                                    </div>
+                                    <div class="dt-service-hover">
+                                        <i class="fa fa-@item.Icon"></i>
+                                        <h3>@item.Name</h3>
+                                        <p>@item.Description</p>
+
+                                    </div>
+                                </li>
+                            }
+                        }
+                        
+                    </ul>
+
+                    <div class="double-space"></div>
+
+                </section>
+            </div>
+        </section>
+
+
+        <!-- BLOG SECTION -->
+        <section id="blog" class="centered-wrapper">
+            <div class="double-space"></div>
+
+            <h1 class="section-title">Clippings</h1>
+            <div class="space"></div>
+
+            <div class="blog-page blog-masonry on-three-columns">
+                
+                    @foreach (var item in Model.JournalItems)
+                    {
+                        <article class="post post-masonry box fadeInUpBig">
+                            <div class="post-thumbnail">
+                                <a href="~/Images/JournalItems/@item.ImageUrl" title="@item.Title" rel="prettyPhoto">
+                                    <span class="item-on-hover"><span class="hover-image"><i class="fa fa-search"></i></span></span>
+                                    <img src="~/Images/JournalItems/@item.ImageUrl" alt="" title="" />
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <h1 class="masonry-title"><a href="blog-single.html">@item.Title</a></h1>
+                                <span class="post-meta"><i class="fa fa-pencil"></i><em>April, 2015</em></span>
+                                <p>@item.Description</p>
+                                <a class="post-read-more" href="@item.ItemUrl" target="_blank">READ MORE</a>
+                            </div>
+                        </article>
+                    }
+            </div>
+
+            <div class="clear"></div>
+            <div class="space"></div>
+
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="parallax-section" id="contact">
+            <div class="darker-overlay">
+                <section class="centered-wrapper">
+                    <div class="double-space"></div>
+
+                    <h1 class="section-title">Contact Me</h1>
+                    <div class="space"></div>
+                    <div class="percent-one-half box fadeInLeft">
+                        <h3 class="title-bg"><span>Contact Info</span></h3>
+                        <ul class="contact-info">
+                            <li><i class="fa fa-map-marker"></i>@Model.User.StreetAddress, @Model.User.City, @Model.User.Country @Model.User.ZipCode</li>
+                            <li><i class="fa fa-phone"></i>@Model.User.PhoneNum</li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:">@Model.User.Email</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="percent-one-half column-last box fadeInRight">
+                        <div id="contactform">
+                            <div id="message"></div>
+                            <form method="post" action="php/contact.php" name="cform" id="cform">
+                                <fieldset class="percent-one-half">
+                                    <input id="name" type="text" name="name" placeholder="Name" />
+                                </fieldset>
+                                <fieldset class="percent-one-half column-last">
+                                    <input type="email" name="email" id="email" placeholder="Email" />
+                                </fieldset>
+                                <fieldset class="clean">
+                                    <textarea name="comments" id="comments" placeholder="Message"></textarea>
+                                </fieldset>
+                                <fieldset>
+                                    <input name="verify" placeholder="3+1 = ?" type="text" id="verify" value="" />
+                                    <input type="submit" name="send" value="SEND" id="submit" class="button black" />
+                                </fieldset>
+                            </form>
+                        </div><!--end contactform-->
+                    </div>
+
+                    <div class="double-space"></div>
+                </section>
+            </div>
+        </section>
+
+        <!-- GOOGLE MAP CONTROLS -->
+        <a class="button-map close-map"><span>My location</span></a>
+
+        <div id="google_map"></div>
+        <footer id="footer">
+            <div id="bottomfooter">
+                <div class="centered-wrapper">
+                    <div class="percent-two-third">
+                        <p>Copyright &copy; 2015 - Jordan K. | All Rights Reserved</p>
+                    </div><!--end one-half-->
+
+                    <div class="percent-one-third column-last">
+                        <ul id="social">
+                            <li><a href="@Model.User.Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="@Model.User.Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="@Model.User.Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                        <!-- You can add social icons for forrst, dribbble, vimeo, linkedin, etc. Just add "<li><a href="#"><i class="fa fa-twitter"></i></a></li>"
+                        to the list. The social icons are generated by FontAwesome font. Get the icons from http://fontawesome.io/ 	-->
+                    </div><!--end one-half-->
+                </div><!--end centered-wrapper-->
+            </div><!--end bottomfooter-->
+
+            <a href="#" class="totop"><i class="fa fa-angle-double-up"></i></a>
+
+        </footer><!--end footer-->
+
+    </div><!--end wrapper-->
+
