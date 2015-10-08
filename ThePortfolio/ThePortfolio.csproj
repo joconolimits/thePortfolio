@@ -134,8 +134,10 @@
     <Compile Include="Controllers\PortfolioItemsController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SkillsController.cs" />
+    <Compile Include="Controllers\SlidesController.cs" />
     <Compile Include="Controllers\TagsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,9 +145,11 @@
     <Compile Include="Models\PortfolioItem.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\ThePortfolioContext.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Value.cs" />
     <Compile Include="ViewModels\AssignedTags.cs" />
     <Compile Include="ViewModels\FrontEnd.cs" />
     <Compile Include="ViewModels\PortfolioItemViewModel.cs" />
@@ -223,12 +227,10 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Tags\Create.cshtml" />
     <Content Include="Views\Tags\Delete.cshtml" />
-    <Content Include="Views\Tags\Details.cshtml" />
     <Content Include="Views\Tags\Edit.cshtml" />
     <Content Include="Views\Tags\Index.cshtml" />
     <Content Include="Views\Skills\Create.cshtml" />
     <Content Include="Views\Skills\Delete.cshtml" />
-    <Content Include="Views\Skills\Details.cshtml" />
     <Content Include="Views\Skills\Edit.cshtml" />
     <Content Include="Views\Skills\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
@@ -251,6 +253,17 @@
     <Content Include="Views\JournalItems\Edit.cshtml" />
     <Content Include="Views\JournalItems\Index.cshtml" />
     <Content Include="Views\Shared\_FrontEndLayout.cshtml" />
+    <Content Include="Views\Slides\Create.cshtml" />
+    <Content Include="Views\Slides\Delete.cshtml" />
+    <Content Include="Views\Slides\Details.cshtml" />
+    <Content Include="Views\Slides\Edit.cshtml" />
+    <Content Include="Views\Slides\Index.cshtml" />
+    <Content Include="Views\Values\Create.cshtml" />
+    <Content Include="Views\Values\Delete.cshtml" />
+    <Content Include="Views\Values\Details.cshtml" />
+    <Content Include="Views\Values\Edit.cshtml" />
+    <Content Include="Views\Values\Index.cshtml" />
+    <Content Include="Views\PortfolioItems\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

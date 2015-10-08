@@ -25,20 +25,20 @@ namespace ThePortfolio.Controllers
             return View(portfolioItemsViewModels);
         }
 
-        // GET: PortfolioItems/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    PortfolioItem portfolioItem = db.PortfolioItems.Find(id);
-        //    if (portfolioItem == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(portfolioItem);
-        //}
+        //GET: PortfolioItems/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            PortfolioItem portfolioItem = db.PortfolioItems.Find(id);
+            if (portfolioItem == null)
+            {
+                return HttpNotFound();
+            }
+            return View(portfolioItem);
+        }
 
         private ICollection<AssignedTags> PopulateTags()
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -15,7 +16,10 @@ namespace ThePortfolio.Models
         public string ZipCode { get; set; }
         public string Country { get; set; }
         public string Email { get; set; }
+        [Required]
         public string Password { get; set; }
+        public string Ocupation { get; set; }
+        public string Quote { get; set; }
         public DateTime BirthDate { get; set; }
         public string PhoneNum { get; set; }
         public string Facebook { get; set; }

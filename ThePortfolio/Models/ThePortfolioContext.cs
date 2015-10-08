@@ -48,5 +48,9 @@ namespace ThePortfolio.Models
         }
 
         public System.Data.Entity.DbSet<ThePortfolio.ViewModels.PortfolioItemViewModel> PortfolioItemViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<ThePortfolio.Models.Slide> Slides { get; set; }
+
+        public System.Data.Entity.DbSet<ThePortfolio.Models.Value> Values { get; set; }
     }
 }

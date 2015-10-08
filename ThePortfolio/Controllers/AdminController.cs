@@ -31,20 +31,13 @@ namespace ThePortfolio.Controllers
             using (ThePortfolioContext dc = new ThePortfolioContext())
             {
                 var v = dc.Users.Where(a => a.Email.Equals(Email)).FirstOrDefault();
-               // PasswordManager pwdManager = new PasswordManager();
-                //if (v != null && pwdManager.IsPasswordMatch(Password, v.Salt, v.Password))
+
                 if(v!=null && v.Password == Password)
                 {
                     FormsAuthentication.SetAuthCookie(v.Email, false);
-                    // add user data in session sin order to use it on other places
                     Session["CurrentUser"] = v;
-                    //Session["Username"] = v.Username.ToString();
                     Session["Avatar"] = v.Avatar.ToString();
-                   // Session["LogedUserFullname"] = v.Name.ToString();
-                    //Session["IsAdmin"] = v.IsAdmin;
-                    //if (v.IsAdmin != AccessLevel.Registered)
-                    //    return RedirectToAction("Index", "Moderator", new { id = v.ID });
-                    //else
+
                         return RedirectToAction("EditUser", "Admin", new { id = v.ID });
                 }
                 else
@@ -66,7 +59,7 @@ namespace ThePortfolio.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateUser([Bind(Include = "ID,Name,LastName,StreetAddress,City,ZipCode,Country,Email,Password,BirthDate,PhoneNum,Facebook,Twitter,Linkedin,Avatar")] User user, HttpPostedFileBase Avatar)
+        public ActionResult CreateUser([Bind(Include = "ID,Name,LastName,StreetAddress,City,ZipCode,Country,Email,Password,BirthDate,PhoneNum,Facebook,Twitter,Linkedin, Quote, Ocupation")] User user, HttpPostedFileBase Avatar)
         {
             if (Avatar != null)
             {
@@ -105,7 +98,7 @@ namespace ThePortfolio.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditUser([Bind(Include = "ID,Name,LastName,StreetAddress,City,ZipCode,Country,Email,Password,BirthDate,PhoneNum,Facebook,Twitter,Linkedin")] User user, HttpPostedFileBase Avatar)
+        public ActionResult EditUser([Bind(Include = "ID,Name,LastName,StreetAddress,City,ZipCode,Country,Email,Password,BirthDate,PhoneNum,Facebook,Twitter,Linkedin, , Quote, Ocupation")] User user, HttpPostedFileBase Avatar)
         {
             if (Avatar != null)
             {

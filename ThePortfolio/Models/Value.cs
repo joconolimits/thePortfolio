@@ -5,13 +5,10 @@ using System.Web;
 
 namespace ThePortfolio.Models
 {
-    public class JournalItem
+    public class Value
     {
         public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string ImageUrl { get; set; }
-        public string ItemUrl { get; set; }
-        public DateTime RelDate { get; set; }
     }
 }

@@ -14,6 +14,8 @@ namespace ThePortfolio.ViewModels
         public List<PortfolioItem> portfolioItems { get; set; }
         public List<JournalItem> JournalItems { get; set; }
         public List<Service> Services { get; set; }
+        public List<Slide> Slides { get; set; }
+        public List<Value> Values { get; set; }
                                            //  public int MyProperty { get; set; }
     }
 }

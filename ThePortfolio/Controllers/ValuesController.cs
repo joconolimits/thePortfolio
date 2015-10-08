@@ -10,93 +10,107 @@ using ThePortfolio.Models;
 
 namespace ThePortfolio.Controllers
 {
-    [Authorize]
-    public class TagsController : Controller
+    public class ValuesController : Controller
     {
         private ThePortfolioContext db = new ThePortfolioContext();
 
-        // GET: Tags
+        // GET: Values
         public ActionResult Index()
         {
-            return View(db.Tags.ToList());
+            return View(db.Values.ToList());
         }
 
-        // GET: Tags/Create
+        // GET: Values/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Value value = db.Values.Find(id);
+            if (value == null)
+            {
+                return HttpNotFound();
+            }
+            return View(value);
+        }
+
+        // GET: Values/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Tags/Create
+        // POST: Values/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name")] Tag tag)
+        public ActionResult Create([Bind(Include = "ID,Title,Description")] Value value)
         {
             if (ModelState.IsValid)
             {
-                db.Tags.Add(tag);
+                db.Values.Add(value);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tag);
+            return View(value);
         }
 
-        // GET: Tags/Edit/5
+        // GET: Values/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tag tag = db.Tags.Find(id);
-            if (tag == null)
+            Value value = db.Values.Find(id);
+            if (value == null)
             {
                 return HttpNotFound();
             }
-            return View(tag);
+            return View(value);
         }
 
-        // POST: Tags/Edit/5
+        // POST: Values/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name")] Tag tag)
+        public ActionResult Edit([Bind(Include = "ID,Title,Description")] Value value)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tag).State = EntityState.Modified;
+                db.Entry(value).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tag);
+            return View(value);
         }
 
-        // GET: Tags/Delete/5
+        // GET: Values/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tag tag = db.Tags.Find(id);
-            if (tag == null)
+            Value value = db.Values.Find(id);
+            if (value == null)
             {
                 return HttpNotFound();
             }
-            return View(tag);
+            return View(value);
         }
 
-        // POST: Tags/Delete/5
+        // POST: Values/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Tag tag = db.Tags.Find(id);
-            db.Tags.Remove(tag);
+            Value value = db.Values.Find(id);
+            db.Values.Remove(value);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
