@@ -11,6 +11,7 @@ using ThePortfolio.ViewModels;
 
 namespace ThePortfolio.Controllers
 {
+    [Authorize]
     public class PortfolioItemsController : Controller
     {
         private ThePortfolioContext db = new ThePortfolioContext();

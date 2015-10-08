@@ -10,6 +10,7 @@ using ThePortfolio.Models;
 
 namespace ThePortfolio.Controllers
 {
+    [Authorize]
     public class ValuesController : Controller
     {
         private ThePortfolioContext db = new ThePortfolioContext();

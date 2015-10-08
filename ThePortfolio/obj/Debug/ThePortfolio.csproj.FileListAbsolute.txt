@@ -41,3 +41,8 @@ D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\bin\Antlr
 D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\bin\Newtonsoft.Json.xml
 D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\obj\Debug\ThePortfolio.dll
 D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\obj\Debug\ThePortfolio.pdb
+D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\bin\BundleTransformer.Core.dll
+D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\bin\JavaScriptEngineSwitcher.Core.dll
+D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\bin\ru-ru\BundleTransformer.Core.resources.dll
+D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
+D:\SEDC code academy v3.0\IndividualProject2\ThePortfolio\ThePortfolio\obj\Debug\ThePortfolio.csprojResolveAssemblyReference.cache
