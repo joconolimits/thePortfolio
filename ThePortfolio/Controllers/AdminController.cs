@@ -19,7 +19,10 @@ namespace ThePortfolio.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            return View();
+            if (db.Users.Count() == 0) 
+                return RedirectToAction("CreateUser");
+            else 
+                return View();
         }
 
         //Post Index
@@ -92,6 +95,7 @@ namespace ThePortfolio.Controllers
                // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User user = db.Users.Find(id);
+            if (user == null) return RedirectToAction("CreateUser");
             if (user == null)
             {
                 return HttpNotFound();
