@@ -84,9 +84,12 @@ namespace ThePortfolio.Controllers
 
         public ActionResult EditUser(int? id)
         {
+            var currentUser = (User)Session["CurrentUser"];
+           
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                id = currentUser.ID;
+               // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User user = db.Users.Find(id);
             if (user == null)
