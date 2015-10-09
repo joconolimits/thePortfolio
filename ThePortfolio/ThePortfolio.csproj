@@ -162,7 +162,6 @@
     <Compile Include="ViewModels\PortfolioItemViewModel.cs" />
     <Compile Include="ViewModels\TagViewModel.cs" />
     <Compile Include="ViewModels\ViewModelHelpers.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -194,8 +193,8 @@
     <Content Include="rs-plugin\js\jquery.themepunch.revolution.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\thePortfolio %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\thePortfolio.pubxml" />
+    <None Include="Properties\PublishProfiles\jordanPortfolio %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\jordanPortfolio.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\frontEnd\custom-isotope.js" />
     <Content Include="Scripts\frontEnd\custom-map.js" />

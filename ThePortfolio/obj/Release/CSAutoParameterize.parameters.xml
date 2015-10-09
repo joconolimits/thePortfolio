@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="ThePortfolioContext-Web.config Connection String" description="ThePortfolioContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=ThePortfolioContext-20151004125443; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|ThePortfolioContext-20151004125443.mdf" tags="SqlConnectionString">
+  <parameter name="ThePortfolioContext-Web.config Connection String" description="ThePortfolioContext Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:cjy76any2j.database.windows.net,1433;Database=portfolioDb;User ID=busavko_joc@hotmail.com@cjy76any2j;Password={jordanPortfolio1};Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="D:\\SEDC\ code\ academy\ v3\.0\\IndividualProject2\\ThePortfolio\\ThePortfolio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ThePortfolioContext']/@connectionString" />
   </parameter>
 </parameters>
