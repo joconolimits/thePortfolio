@@ -38,7 +38,7 @@ namespace ThePortfolio.Controllers
                 if(v!=null && v.Password == Password)
                 {
                     FormsAuthentication.SetAuthCookie(v.Email, false);
-                    Session["CurrentUser"] = v;
+                    Session["CurrentUserId"] = v.ID;
                     Session["Avatar"] = v.Avatar.ToString();
 
                         return RedirectToAction("EditUser", "Admin", new { id = v.ID });
@@ -87,11 +87,11 @@ namespace ThePortfolio.Controllers
 
         public ActionResult EditUser(int? id)
         {
-            var currentUser = (User)Session["CurrentUser"];
+            int ID = (int)Session["CurrentUserId"];
            
             if (id == null)
             {
-                id = currentUser.ID;
+                id = ID;
             }
             User user = db.Users.Find(id);
             if (user == null) return RedirectToAction("CreateUser");

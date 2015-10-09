@@ -89,7 +89,7 @@ namespace ThePortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Image,Caption")] Slide slide, HttpPostedFileBase Image)
+        public ActionResult Edit([Bind(Include = "ID,Caption")] Slide slide, HttpPostedFileBase Image)
         {
 
             var photoName = db.Slides.Find(slide.ID).Image;

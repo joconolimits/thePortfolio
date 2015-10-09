@@ -11,8 +11,9 @@
         <h2>@ViewBag.Message</h2>
         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input", placeholder = "E-mail" } })
         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "input", placeholder = "Password" } })
-        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "input", placeholder = "Password",
+       type = "password" } })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger"  })
         <input type="submit" value="Login" class="button-login" />
     </div>
 }
