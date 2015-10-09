@@ -89,8 +89,12 @@
         <div class="double-space"></div>
 
         <div class="centered-wrapper">
+            @{
+                string MyName = Model.User.Name;
+                string MyLastName = Model.User.LastName;
+            }
 
-            <h1 class="section-title">@Model.User.Name @Model.User.LastName</h1>
+            <h1 class="section-title">@MyName @MyLastName</h1>
 
             <div class="space"></div>
 
