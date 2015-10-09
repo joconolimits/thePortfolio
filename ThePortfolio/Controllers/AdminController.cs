@@ -79,7 +79,7 @@ namespace ThePortfolio.Controllers
             {
                 db.Users.Add(user);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Tags");
             }
 
             return View(user);
@@ -92,7 +92,6 @@ namespace ThePortfolio.Controllers
             if (id == null)
             {
                 id = currentUser.ID;
-               // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User user = db.Users.Find(id);
             if (user == null) return RedirectToAction("CreateUser");
@@ -151,6 +150,5 @@ namespace ThePortfolio.Controllers
             return RedirectToAction("Index", new { LogoutMessage = Message });
         }
 
-        //Tags Methods
     }
 }

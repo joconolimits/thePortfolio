@@ -42,43 +42,43 @@
     <!-- HELLO SECTION -->
 
     <section id="hello">
+   <div class="menu-fixer"></div>
+@if ( Model.Slides.Count > 0)
+{
 
-        <div class="menu-fixer"></div>
+            <div class="fullscreenbanner-container">
+                <div class="fullscreenbanner">
+                    <ul>
+                        @{
+                            int slideFlag = 0;
+                            string time = "0";
+                            string effect = "fade";
+                            foreach (var item in Model.Slides)
+                            {
+                                if (slideFlag > 0) { time = "300"; }
+                                if (slideFlag % 2 > 0) { effect = "slidedown"; }
+                                else { effect = "fade"; }
+                                slideFlag++;
+                                <li data-transition="@effect" data-slotamount="15" data-masterspeed="@time">
+                                    <img src="~/Images/slides/@item.Image" alt="" />
 
-        <div class="fullscreenbanner-container">
-            <div class="fullscreenbanner">
-                <ul>
-                    @{
-                        int slideFlag = 0;
-                        string time = "0";
-                        string effect = "fade";
-                        foreach (var item in Model.Slides)
-                        {
-                            if (slideFlag > 0) { time = "300"; }
-                            if (slideFlag % 2 > 0) { effect = "slidedown"; }
-                            else { effect = "fade"; }
-                            slideFlag++;
-                            <li data-transition="@effect" data-slotamount="15" data-masterspeed="@time">
-                                <img src="~/Images/slides/@item.Image" alt="" />
+                                    <div class="caption tp-resizeme big-text lft ltt"
+                                         data-x="center"
+                                         data-y="center"
+                                         data-speed="300"
+                                         data-start="500"
+                                         data-easing="easeOutExpo"><h1>@item.Caption</h1></div>
 
-                                <div class="caption tp-resizeme big-text lft ltt"
-                                     data-x="center"
-                                     data-y="center"
-                                     data-speed="300"
-                                     data-start="500"
-                                     data-easing="easeOutExpo"><h1>@item.Caption</h1></div>
+                                    </li>
 
-                                </li>
-
+                            }
                         }
-                    }
-                </ul>
-
-
+                    </ul>
+                </div>
             </div>
-        </div>
-
+                            }
     </section>
+
 
 
 
@@ -89,12 +89,7 @@
         <div class="double-space"></div>
 
         <div class="centered-wrapper">
-            @{
-                string MyName = Model.User.Name;
-                string MyLastName = Model.User.LastName;
-            }
-
-            <h1 class="section-title">@MyName @MyLastName</h1>
+            <h1 class="section-title">@Model.User.Name @Model.User.LastName</h1>
 
             <div class="space"></div>
 
@@ -380,16 +375,16 @@
                             <fieldset class="percent-one-half">
                                 <input id="name" type="text" name="name" placeholder="Name" />
                             </fieldset>
-                                <fieldset class="percent-one-half column-last">
-                                    <input type="email" name="email" id="email" placeholder="Email" />
-                                </fieldset>
-                                <fieldset class="clean">
-                                    <textarea name="message" id="comments" placeholder="Message"></textarea>
-                                </fieldset>
-                                <fieldset>
-                                    <input name="verify" placeholder="3+1 = ?" type="text" id="verify" value="" />
-                                    <input type="submit" name="send" value="submit" id="submit" class="button black" />
-                                </fieldset>
+                            <fieldset class="percent-one-half column-last">
+                                <input type="email" name="email" id="email" placeholder="Email" />
+                            </fieldset>
+                            <fieldset class="clean">
+                                <textarea name="message" id="comments" placeholder="Message"></textarea>
+                            </fieldset>
+                            <fieldset>
+                                <input name="verify" placeholder="3+1 = ?" type="text" id="verify" value="" />
+                                <input type="submit" name="send" value="submit" id="submit" class="button black" />
+                            </fieldset>
                         }
                     </div><!--end contactform-->
                 </div>
